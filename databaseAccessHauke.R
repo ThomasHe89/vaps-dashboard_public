@@ -122,9 +122,7 @@ rm(path)
   allPCDBObjects <- lapply(ls(.GlobalEnv, all.names = F), function(o) get(o, envir = .GlobalEnv)) 
 
   names(allPCDBObjects) <- ls(.GlobalEnv, all.names = F)[!grepl("allPCDBObjects",ls())]
-  class(allPCDBObjects)
-  str(allPCDBObjects)
-
+  
   if ( sub(".*/","",getwd()) == "vaps-dashboard_public" ) {
     setCacheRootPath(path=getwd()) 
     saveCache(allPCDBObjects, key=list("PCDB","data"))   
@@ -132,3 +130,5 @@ rm(path)
   
   rm(allPCDBObjects)
     
+
+  
