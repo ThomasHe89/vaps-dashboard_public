@@ -38,7 +38,7 @@ DescriptionTextHomeSection <- tagList(
 
 # About Section
 
-DescriptionTextAboutSection <- tagList(
+DescriptionTextAboutMainSection <- tagList(
   tags$h1("About"),
   tags$br(),
   tags$h2("The Program"),
@@ -90,6 +90,42 @@ DescriptionTextAboutSection <- tagList(
   tags$br()
 )
 
+DescriptionTextAboutSideSection <- tagList(
+  img(src = "humboldt_logo.png", height = 200, width = 200),
+  tags$br(),
+  tags$br(),
+  tags$br(),
+  tags$br(),
+  tags$h2("Research team"),
+  tags$br(),
+  tags$h4("PROF. E.M. IMMERGUT"),
+  tags$h4(a("ellen.m.immergut@sowi.hu-berlin.de", 
+            href = "https://www.sowi.hu-berlin.de/en/lehrbereiche-en/comppol-en/team/emi")),
+  tags$h4("Humboldt University of Berlin"),
+  tags$br(),
+  tags$h4("DR. T. ABOU-CHADI"),
+  tags$h4(a("tarik.abou-chadi@sowi.hu-berlin.de", 
+            href = "https://www.sowi.hu-berlin.de/en/lehrbereiche-en/comppol-en/team/tacEN")),
+  tags$h4("Humboldt University of Berlin"),
+  tags$br(),
+  tags$h4("DR. M. ORLOWSKI"),
+  tags$h4(a("matthias.orlowski@sowi.hu-berlin.de", 
+            href = "https://www.sowi.hu-berlin.de/en/lehrbereiche-en/comppol-en/team/moEN")),
+  tags$h4("Humboldt University of Berlin"),
+  tags$br(),
+  tags$h4("DR. K. VOESSING"),
+  tags$h4(a("konstantin.voessing@sowi.hu-berlin.de", 
+            href = "https://www.sowi.hu-berlin.de/en/lehrbereiche-en/comppol-en/team/tm")),
+  tags$h4("Humboldt University of Berlin"),
+  tags$br(),
+  tags$h4("MA T. MARUHN"),
+  tags$h4(a("thomas.maruhn@sowi.hu-berlin.de", 
+            href = "https://www.sowi.hu-berlin.de/en/lehrbereiche-en/comppol-en/team/tm")),
+  tags$h4("Humboldt University of Berlin"),
+  tags$br(),
+  tags$br(),
+  tags$br()
+)
 
 # Configuration Events 
 # 

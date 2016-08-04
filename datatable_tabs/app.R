@@ -9,22 +9,26 @@ library(shiny)
 library(DT)
 
 # IMPORTANT: Set working directory to local 'vaps-dashboard_public' directory first
-if ( Sys.info()["user"] == "lichthau" ) { setwd("~/Documents/Humboldt/Electoral_Vulnerability/Projects/vaps-dashboard_public")
-} else if ( Sys.info()["user"] == "johndoe" ) { setwd("")
-} else if ( Sys.info()["user"] == "mio-mio1" ) { setwd("")
-} else warning("Sorry, but could not find path to 'vaps-dashboard_public' directory.")
+  if ( Sys.info()["user"] == "lichthau" ) { setwd("~/Documents/Humboldt/Electoral_Vulnerability/Projects/vaps-dashboard_public")
+  } else if ( Sys.info()["user"] == "johndoe" ) { setwd("")
+  } else if ( Sys.info()["user"] == "mio-mio1" ) { setwd("")
+  } else warning("Sorry, but could not find path to 'vaps-dashboard_public' directory.")
 
+
+
+# (a) source all data tables and (b) lists of optional variable choices (for each data table)
 source("datatable_tabs/define_datatables.R")
+  # objects *_table usually join information from different tables and view on one table of interst 
+  # (e.g., cabinet_portfolios_table joins information from country and party tables, respectively, on cabinet table)
+  # objects var_choices_*_table are lists with abbreviations of variables contained in data table as elements, and 
+  # variable labels as list-element names (used below as 'choices' and 'selected' options in UI checkboxGroupInput()-functions, 
+  # and hence to subset data table according to user's variable choice in server's inreactive *_tableOutput()-functions)
 
-# (c) define list of countries in dataframe, optional choices for country selector (selectInput) in user interface
+# (c) define list of countries in database, optional choices for country selector (selectInput) in user interface (same for all data tables)
 countries_in_data <- countrySelectorList  
 
-# NOTE: lists colLabsList and countrySelectorList are defined in databaseAccessHauke.R 
-
+# (d) source html-tagLists for descriptive texts (Home and About sections, table descriptions) on webpages
 source("Codebook/table_descriptions_tagLists.R")
-
-
-
 
 
 ### USER INTERFACE ###
@@ -40,43 +44,10 @@ ui <- fluidPage(
     tabPanel("About",
        sidebarLayout(position = "right",
            sidebarPanel(
-             img(src = "humboldt_logo.png", height = 200, width = 200),
-             tags$br(),
-             tags$br(),
-             tags$br(),
-             tags$br(),
-             tags$h2("Research team"),
-             tags$br(),
-             tags$h4("PROF. E.M. IMMERGUT"),
-             tags$h4(a("ellen.m.immergut@sowi.hu-berlin.de", 
-                       href = "https://www.sowi.hu-berlin.de/en/lehrbereiche-en/comppol-en/team/emi")),
-             tags$h4("Humboldt University of Berlin"),
-             tags$br(),
-             tags$h4("DR. T. ABOU-CHADI"),
-             tags$h4(a("tarik.abou-chadi@sowi.hu-berlin.de", 
-                       href = "https://www.sowi.hu-berlin.de/en/lehrbereiche-en/comppol-en/team/tacEN")),
-             tags$h4("Humboldt University of Berlin"),
-             tags$br(),
-             tags$h4("DR. M. ORLOWSKI"),
-             tags$h4(a("matthias.orlowski@sowi.hu-berlin.de", 
-                       href = "https://www.sowi.hu-berlin.de/en/lehrbereiche-en/comppol-en/team/moEN")),
-             tags$h4("Humboldt University of Berlin"),
-             tags$br(),
-             tags$h4("DR. K. VOESSING"),
-             tags$h4(a("konstantin.voessing@sowi.hu-berlin.de", 
-                       href = "https://www.sowi.hu-berlin.de/en/lehrbereiche-en/comppol-en/team/tm")),
-             tags$h4("Humboldt University of Berlin"),
-             tags$br(),
-             tags$h4("MA T. MARUHN"),
-             tags$h4(a("thomas.maruhn@sowi.hu-berlin.de", 
-                       href = "https://www.sowi.hu-berlin.de/en/lehrbereiche-en/comppol-en/team/tm")),
-             tags$h4("Humboldt University of Berlin"),
-             tags$br(),
-             tags$br(),
-             tags$br()
+             DescriptionTextAboutSideSection
            ),  # close sidebarPanel
            mainPanel(  
-             DescriptionTextAboutSection  
+             DescriptionTextAboutMainSection  
            )  # close mainPanel
       )  # close Sidebarlayout
     ),  # close tabPanel 'About'
