@@ -7,15 +7,11 @@ Configuration Events
 
 The configuration events data table sequences changes in the political-institutional configurations of a country by start date.
 A new political configuration is recorded when one of the following changes occurs:
-
 - a change in cabinet composition (rows in Cabinet table, denoted by cabinet ID)
 - a change in lower house composition (rows in Lower House table , denoted by lower house ID)
-- a change in upper house composition, if an upper house exists in country's political system (rows in Upper House table,
-  denoted by upper house ID)
-- a change in presidency, if president exists in country's political system (rows in table Presidential Election, identified
-  by variable presidential election ID)
-- a change in a veto institutions constitutional entitlment of veto rights (i.e., change in veto power of one out of seven veto
-  institutions recorded per country in Veto Points table)
+- a change in upper house composition, if an upper house exists in country's political system (rows in Upper House table, denoted by upper house ID)
+- a change in presidency, if president exists in country's political system (rows in table Presidential Election, identified by variable presidential election ID)
+- a change in a veto institutions constitutional entitlement of veto rights (i.e., change in veto power of one out of seven veto institutions recorded per country in Veto Points table)
 
 
 
@@ -30,8 +26,8 @@ The cabinet data table contains information on cabinet configurations.
 A new cabinet is enlisted if one of the following events took place:
 
 - a change in coalition composition at the party-level.
-- a change in head of government.
-- a new government formation after general legislative elections (not in presidential systems).
+- a change in the head of government.
+- a new government formation after general legislative elections (does not apply to presidential systems).
 
 
 
