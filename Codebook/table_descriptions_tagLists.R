@@ -1,4 +1,95 @@
 
+library(shiny)
+
+# Home section
+DescriptionTextHomeSection <- tagList(
+  tags$h1("PCDB "),
+  tags$h2("Political Configurations Database"),
+  tags$br(),
+  tags$br(),
+  tags$h5("The Political Configuration Database (PCDB) is a new type of data infrastructure for political science.
+          The PCDB provides an infrastructure that combines information on veto points and veto players,
+          party composition of governments, parliamentary and electoral majorities of governments, as well as vote and 
+          seat results in all parliamentary chambers for 34 countries from 1939 to 2016."),
+  tags$br(),
+  tags$h5("While most time-series cross-section studies look at country-years as their unit of analysis, in our view governmental
+          configurations have a more substantial meaning. If we are interested in legislation as a mean of effecting institutional
+          change, and as legislation emerges from policy processes that often extend for more than one year, we believe
+          that the reform effort of a governmental configuration - and not a single year within the configuration - 
+          is the most appropriate unit of analysis. In this spirit PCDB offers a database and data tables for the empirical study
+          of parties, elections and governments, as well as a web interface that gives a comprehensive and accessible way to process
+          all data directly online."),
+  tags$br(),
+  tags$h5("Currently, PCDB contains data on elections and governments for all EU and most OECD members
+          for the entire post-war period. The database combines approximately 1250 parties, 572 lower house
+          elections, 516 upper house elections and 83 presidential elections, with 958 cabinets in 1905
+          political configurations. Updates at regular intervals will provide up-to-date empirical information
+          including recent elections or changes in government. This information can be linked to various external
+          data sources and offers a comphrensive new database for political science research."),
+  tags$br(),
+  tags$h5("The PCDB is funded by Deutsche Forschungsgemeinschaft (DFG) and based at Humboldt University Berlin. Professor Ellen M. 
+          Immergut has been appointed as Scientific Programme Coordinator. For more information visit our ",
+          a("website.", 
+            href = "https://www.sowi.hu-berlin.de/en/lehrbereiche-en/comppol-en/index.html?set_language=en")),
+  tags$br(),
+  tags$br(),
+  tags$p("Development version 1.0", style = "color:red")
+)
+
+# About Section
+
+DescriptionTextAboutSection <- tagList(
+  tags$h1("About"),
+  tags$br(),
+  tags$h2("The Program"),
+  tags$br(),
+  tags$h5("The Political Configuration Database (PCDB) is a new type of data infrastructure for
+          political science. The PCDB provides an infrastructure that systematically combines 
+          information on veto points and veto players, party composition of governments, parliamentary
+          and electoral majorities of governments, as well as vote and seat results in all parliamentary
+          chambers for 34 countries from 1939 to 2016. While most time-series cross-section 
+          studies look at country-years as their unit of analysis, in our view governmental configurations
+          have a more substantial meaning. If we are interested in legislation as a mean of effecting institutional
+          change, and as legislation emerges from policy processes that often extend for more than one year, we
+          believe that the reform effort of a governmental configuration - and not a single year within the configuration - 
+          is the most appropriate unit of analysis. In this context PCDB offers a database and data tables for the 
+          empirical study of parties, elections and governments, as well as a web interface that gives a comprehensive and
+          accessible way to process all data directly online. Currently, PCDB contains data on elections and governments
+          for all EU and most OECD members for the entire post-war period. The database combines approximately 1250 parties,
+          572 lower house elections, 516 upper house elections and 83 presidential elections, with 958 cabinets in 1905 political
+          configurations. Updates at regular intervals will provide up-to-date empirical information including recent elections
+          or changes in government. This information can be linked to various external data sources and offers comphrensive new
+          database for political science research."),
+  tags$br(),
+  tags$h2("Features"),
+  tags$br(),
+  tags$h5("The Political Configuration Database offers a comphrensive new database for political science research."),
+  tags$ul(
+    tags$li("Coverage of all EU and most OECD members for the entire post-war period"),
+    tags$li("Data on 1250 parties, 572 lower house elections, 516 upper house elections in 1905 unique political
+            configurations"),
+    tags$li("Regular updates ensure up-to-date empirical information including recent elections
+            or changes in government"),
+    tags$li("Easily accessible download function"),
+    tags$li("Comprehensive web interface using R shiny to process all data directly online.")),
+  tags$br(),
+  tags$h2("Funding"),
+  tags$br(),
+  tags$h5("The program is funded by the Deutsche Forschungsgesellschaft (DFG). More information about the
+          Deutsche Forschungsgesellschaft can be found on the ",
+          a("DFG website.", 
+            href = "http://dfg.de/en/index.jsp")),
+  tags$br(),
+  tags$h2("Contact"),
+  tags$br(),
+  tags$h5("The PCDB is based at the department of Comparative Politics of Humboldt University Berlin. Professor Ellen M. 
+          Immergut has been appointed as Scientific Programme Coordinator. For more information about Comparative Politics
+          at Humboldt University visit our ",
+          a("website.", 
+            href = "https://www.sowi.hu-berlin.de/en/lehrbereiche-en/comppol-en/index.html?set_language=en")),
+  tags$br()
+)
+
 
 # Configuration Events 
 # 
@@ -95,7 +186,7 @@ DescriptionTextLowerHouse <- tagList(
     tags$li("a change in seat composition through legislative elections"),
     tags$li(" a change in seat composition mergers or splits in factions during the legislature")
   ), # close unordered list
-  tags$h5("When enlistment is due to the latter event, no lower house election identifier (lhelc_id) is recorded. Otherwise, each lower house corresponds to a lower house election."),
+  tags$h6("When enlistment is due to the latter event, no lower house election identifier (lhelc_id) is recorded. Otherwise, each lower house corresponds to a lower house election."),
   tags$hr()
 )
 
